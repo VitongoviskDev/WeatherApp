@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="search-container">
+            <div class="search-bar">
+                <input type="text" name="search" id="search" placeholder="Search..." onchange="onInputChanged()">
+                <button onclick="search()"><img src="./assets/Icons/lupa.png" alt=""></button>
+            </div>
+        </div>
+        <div class="city">
+            <p id="city"></p>
+        </div>
+        <div class="current-weather-container">
+            <div class="temperature">
+                <p id="current-temperature">1000°</p>
+                <p id="current-description">description</p>
+            </div>
+            <div class="min-max">
+                <img id="current-icon" alt="weather icon">
+                <div class="min-max_temperatures">
+                    <div class="min-max_temperature">
+                        <p>Min.:</p>
+                        <p id="current-min">0°</p>
+                    </div>
+                    <div class="min-max_temperature">
+                        <p>Max.:</p>
+                        <p id="current-max">0°</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="current-info-container">
+            <div class="other-info-container">
+                <div class="info-card sunrise">
+                    <div>
+                        <div class="title">sunrise</div>
+                        <p class="sunrise"></p>
+                    </div>
+                    <div>
+                        <div class="title">sunset</div>
+                        <p class="sunset"></p>
+                    </div>
+                </div>
+                <div class="info-card center-content">
+                    <p class="title">feels like</p>
+                    <div class="content">
+                        <p id="feels-like"></p>
+                    </div>
+                </div>
+                <div class="info-card center-content">
+                    <p class="title">humidity</p>
+                    <div class="content">
+                        <p id="humidity"></p>
+                    </div>
+                </div>
+                <div class="info-card center-content">
+                    <p class="title">pressure</p>
+                    <div class="content">
+                        <p id="pressure"></p>
+                        <p class="thin-text">hPa</p>
+                    </div>
+                </div>
+                <div class="info-card center-content">
+                    <p class="title">clouds</p>
+                    <div class="content">
+                        <p id="clouds"></p>
+                    </div>
+                </div>
+                <div class="info-card center-content">
+                    <p class="title">visibility</p>
+                    <div class="content">
+                        <p id="visibility"></p>
+                        <p class="thin-text">Km</p>
+                    </div>
+                </div>
+                <div class="info-card center-content">
+                    <p class="title">rain</p>
+                    <div class="content">
+                        <p id="rain"></p>
+                        <p class='thin-text'>mm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="wind-info">
+                <div class="icon">
+                    <p>Wind</p>
+                    <img id="wind-icon">
+                </div>
+                <div class="images">
+                    <img id="wind-compass">
+                    <img id="wind-compass-arrow">
+                </div>
+                <div class="text">
+                    <p id="wind-speed"></p>
+                    <p>Km/h</p>
+                    <p id="wind-deg"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

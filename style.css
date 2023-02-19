@@ -1,0 +1,276 @@
+:root{
+    --background: #add8e6;
+    --search-bar-bg: #9bc5d3;
+    --text-color: #222;
+    --text-oposite-color: #f2f2f2;
+}
+:root.night{
+    --background: #0d0d20;
+    --search-bar-bg: #1a1a3f;
+    --text-color: #f2f2f2;
+    --text-oposite-color: #222;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--text-color);
+
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body{
+    height: 100vh;
+    width: 100%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    width: 100%;
+    background-color: var(--background);
+}
+
+/* SEARCH BAR */
+.container .search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+}
+.container .search-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    height: 48px;
+    width: 90%;
+    margin: 16px;
+    padding: 0 1.5rem;
+
+    background-color: var(--search-bar-bg);
+    border-radius: 2rem;
+    border: 2px solid transparent;
+    transition: all ease-in-out .2s;
+}
+.container .search-bar.wrong{
+    border: 2px solid crimson;
+}
+.container .search-bar input{
+    width: 100%;
+
+    font: 400 16px system-ui;
+    background-color: transparent;
+    border: none;
+
+    outline: none;
+}
+.container .search-bar button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 32px;
+    width: 32px;
+    
+    background-color: transparent;
+
+    border: none;
+    
+    cursor: pointer;
+}
+.container .search-bar button img{
+    height: 90%;
+}
+
+/* CURRENT CITY */
+.container .city{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 48px;
+    font-weight: 900;
+}
+/* CURRENT WEATHER CONTAINER */
+.container .current-weather-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+/* CURRENT WEATHER CONTAINER ULTILITIES*/
+.container .current-weather-container .temperature,
+.container .current-weather-container .min-max{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+}
+
+/* CURRENT WEATHER CONTAINER > TEMPERATURE*/
+.container .current-weather-container .temperature p{
+    color: var(--text-color);
+}
+.container .current-weather-container .temperature p:first-child{
+    font-size: 72px;
+    font-weight: 200;
+}
+.container .current-weather-container .temperature p:last-child{
+    font-size: 28px;
+}
+/* CURRENT WEATHER CONTAINER > MIN-MAX*/
+.container .current-weather-container .min-max{
+    padding-bottom: 48px;
+}
+.container .current-weather-container .min-max img{
+   width: 200px;
+   margin-bottom: -40px;
+}
+.container .current-weather-container .min-max .min-max_temperatures{
+    display: flex;
+    justify-content: space-evenly;
+    width: 200px;
+}
+.container .current-weather-container .min-max .min-max_temperatures .min-max_temperature{
+    display: flex;
+    gap: 4px;
+}
+.container .current-weather-container .min-max .min-max_temperatures .min-max_temperature p:last-child{
+    font-weight: 900;
+}
+
+/* CURRENT INFO CONTAINER */
+.container .current-info-container{
+    display: flex;
+    width: 100%;
+    padding: 32px;
+}
+.container .current-info-container .other-info-container{
+    display: grid;
+    grid-template-columns: repeat(4, 96px);
+    grid-template-rows: repeat(2, 96px);
+    gap: 8px;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+}
+.container .current-info-container .other-info-container .info-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    padding: 4px 8px;
+    
+    background-color: rgba(255, 255, 255, 0.1);
+    
+    border-radius: 10px;
+}
+.container .current-info-container .other-info-container .info-card p{
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 18px;
+}
+.container .current-info-container .other-info-container .info-card .title{
+    font-weight: 200;
+    font-size: 18px;
+    opacity: .7;
+}
+/* INFO CARD SUNRISE */
+.container .current-info-container .other-info-container .info-card.sunrise{
+    grid-column: 1 / span 2;
+    flex-direction: row;
+    justify-content: space-evenly;   
+    align-items: flex-start;
+}
+.container .current-info-container .other-info-container .info-card.sunrise > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 22px;
+    height: 100%;
+}
+.container .current-info-container .other-info-container .info-card.sunrise div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* INFO CARD HUMIDITY */
+.container .current-info-container .other-info-container .info-card.center-content .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.container .current-info-container .other-info-container .info-card .content .thin-text{
+    font-weight: 400;
+    font-size: 14px;
+    margin-left: 4px;
+}
+
+
+.container .current-info-container .wind-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 256px;
+}
+.container .current-info-container .wind-info .icon{
+    position: relative;
+    top: -100px;
+    left: -148px;
+    
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    width: 0;
+    height: 0;
+
+    font-size: 22px;
+    font-weight: 400;
+}
+.container .current-info-container .wind-info .icon img{
+    height: 32px;
+}
+
+.container .current-info-container .wind-info .images,
+.container .current-info-container .wind-info .images img{
+    position: absolute;
+    height: 256px;
+    width: 256px;
+
+}
+.container .current-info-container .wind-info .images img:last-child{
+    transform: rotate(0deg);
+    transition: all .8s cubic-bezier(0.2, 0.4, 0.2, 1.5);
+}
+.container .current-info-container .wind-info .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container .current-info-container .wind-info .text p:first-child{
+    font-weight: 200;
+    font-size: 36px;
+    margin-bottom: -8px;
+}
+.container .current-info-container .wind-info p:last-child{
+    font-size: 22px;
+    font-weight: 200;
+    margin-top: 4px;
+}
