@@ -1,3 +1,3 @@
 # WeatherApp
 
-https://vitongoviskdev.github.io/WeatherApp/
+Live Demo: https://vitongoviskdev.github.io/WeatherApp/
