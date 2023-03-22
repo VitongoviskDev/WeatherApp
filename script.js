@@ -91,19 +91,19 @@ function FillData(data){
     visibilityP.textContent = (data.visibility / 1000).toFixed(2);
 
     const rainP = allCardInfo[6].querySelector('.content #rain');
-    rainP.textContent = Math.round(data.rain['1h']);
+    rainP.textContent = Math.round(data.rain != undefined ? data.rain['1h'] : '0');
 
     
     const currentDate = new Date(data.dt * 1000);
     if(currentDate.getHours() > 18 || currentDate.getHours() < 6){
         document.documentElement.classList.add('night');
-        windIconImg.src = 'assets/Icons/wind-light.png'
-        compassImg.src = 'assets/compass/compass-light.png';
-        compassArrowImg.src = 'assets/compass/arrow-light.png';
+        windIconImg.src = './assets/Icons/wind-light.png'
+        compassImg.src = './assets/compass/compass-light.png';
+        compassArrowImg.src = './assets/compass/arrow-light.png';
     }else{
         document.documentElement.classList.remove('night');
-        compassImg.src = 'assets/compass/compass-dark.png';
-        compassArrowImg.src = 'assets/compass/arrow-dark.png';
+        compassImg.src = './assets/compass/compass-dark.png';
+        compassArrowImg.src = './assets/compass/arrow-dark.png';
     }
 }
 
